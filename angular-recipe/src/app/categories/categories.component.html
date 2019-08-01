@@ -1,0 +1,11 @@
+<h2></h2>
+<ul class="categories">
+  <li *ngFor="let meal of meals">
+      <span class="badge">{{meal.strMeal}}</span> {{meal.strCategory}}
+    <img src={{meal.strMealThumb}} (click)="onSelect(meals)"/>
+    <p>{{meal.strInstructions}}</p>
+    <p>{{meal.strIngredient1}}</p>
+    
+  </li>
+</ul>
+
