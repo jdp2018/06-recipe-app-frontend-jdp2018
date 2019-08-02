@@ -1,11 +1,37 @@
 <h2></h2>
 <ul class="categories">
   <li *ngFor="let meal of meals">
-      <span class="badge">{{meal.strMeal}}</span> {{meal.strCategory}}
-    <img src={{meal.strMealThumb}} (click)="onSelect(meals)"/>
-    <p>{{meal.strInstructions}}</p>
-    <p>{{meal.strIngredient1}}</p>
+    <div class="header">
+    <span class="badge">{{ meal.strMeal }}</span> {{ meal.strCategory }}
+  </div>
+    <div class ="recipe">
+    <img src="{{ meal.strMealThumb }}" (click)="onSelect(meal.idMeal)" />
+     
+    <div class="instructions">
+    <p>{{ meal.strInstructions }}</p>
+  </div>
+
     
+    <div class="ingridient">
+        Ingridients
+      <p>{{ meal.strIngredient1 }} </p>
+      <p>{{ meal.strIngredient2 }} </p>
+      <p>{{ meal.strIngredient3 }} </p>
+      <p>{{ meal.strIngredient4 }} </p>
+      <p>{{ meal.strIngredient5 }} </p>
+      <p>{{ meal.strIngredient6 }} </p>
+      <p>{{ meal.strIngredient7 }} </p>
+      <p>{{ meal.strIngredient8 }} </p>
+      <p>{{ meal.strIngredient9 }} </p>
+      <p>{{ meal.strIngredient10 }} </p>
+      <p>{{ meal.strIngredient11 }} </p>
+      <p>{{ meal.strIngredient12 }} </p>
+      <p>{{ meal.strIngredient13 }} </p>
+      <p>{{ meal.strIngredient14 }} </p>
+      <p>{{ meal.strIngredient15 }} </p>
+  </div>
+    <a href ="{{meal.strYoutube}}" >Link to Video instuctions</a>
+  
+    </div>
   </li>
 </ul>
-
