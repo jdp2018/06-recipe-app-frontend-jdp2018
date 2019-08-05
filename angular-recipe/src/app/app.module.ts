@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { CategoriesComponent } from './categories/categories.component';
+import { VegetarianComponent } from './vegetarian/vegetarian.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { CategoriesComponent } from './categories/categories.component';
     FooterComponent,
     CategoriesComponent,
     routingComponents,
-    
+    VegetarianComponent,
   ],
   imports: [
     BrowserModule,

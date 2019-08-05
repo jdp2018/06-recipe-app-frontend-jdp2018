@@ -13,23 +13,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
     align-items: center;
     min-width: 40%;
     
 }
-.ingredient{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 .instructions{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.1em;
+    flex-flow: row;
+    font-size: 1.2em;
+    padding: 2em;
 }
 .header{
     text-align: center;

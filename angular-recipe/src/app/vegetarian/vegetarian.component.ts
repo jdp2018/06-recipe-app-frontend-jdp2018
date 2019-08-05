@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import {  DataService } from '../data.service';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  selector: 'app-vegetarian',
+  templateUrl: './vegetarian.component.html',
+  styleUrls: ['./vegetarian.component.scss']
 })
-export class CategoriesComponent implements OnInit {
-  /*
-  categories: category[];
-  selectedCategory: category;
-  */
+export class VegetarianComponent implements OnInit {
+
   meals: meal[];
   selectedMeals: meals;
-  id: 52976;
+  id: '';
+  searchTerm: string;
 
   onSelect(meals: meals): void {
     this.selectedMeals = meals;
