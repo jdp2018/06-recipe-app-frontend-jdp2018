@@ -1,3 +1,9 @@
-<p>
-  recipe-list works!
-</p>
+<h1>Recipe</h1>
+
+<ul>
+    <li *ngFor = "let meal of meals$ | async">
+      <a [routerLink]="['/categories', categories.id]">{{meal.strMeal}}</a>
+    </li>
+
+</ul>
+<router-outlet></router-outlet>

@@ -10,6 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 
 import { CategoriesComponent } from './categories/categories.component';
 import { VegetarianComponent } from './vegetarian/vegetarian.component';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { CategoriesFilterPipe } from './categories/categories-filter.pipe';
+import { FormsModule } from '@angular/forms';
+ 
 
 
 @NgModule({
@@ -20,11 +24,14 @@ import { VegetarianComponent } from './vegetarian/vegetarian.component';
     CategoriesComponent,
     routingComponents,
     VegetarianComponent,
+    RecipeDetailComponent,
+    CategoriesFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

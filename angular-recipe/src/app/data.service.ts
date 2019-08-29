@@ -8,12 +8,15 @@ import { Observable } from 'rxjs';
 })
 
 export class DataService {
-  private apiUrl = 'https://www.themealdb.com/api/json/v1/1/latest.php';
+  private apiUrl = 'https://www.themealdb.com/api/json/v1/1';
   constructor(private http: HttpClient) { }
   private randomUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
-  getRecipe(): Observable<object> {
-    return this.http.get(this.apiUrl);
+  getRecipes(): Observable<object> {
+    return this.http.get(`${this.apiUrl}/latest.php`);
+  }
+  getRecipe(id: string): Observable<object> {
+    return this.http.get(`${this.apiUrl}/lookup.php?i=${id}`);
   }
   getRandom(): Observable<object> {
     return this.http.get(this.randomUrl);

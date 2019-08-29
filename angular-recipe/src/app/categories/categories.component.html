@@ -1,11 +1,18 @@
-<h2></h2>
-<ul class="categories">
-  <li *ngFor="let meal of meals">
-    <div class="header">
-      <span class="badge">{{ meal.strMeal }}</span> {{ meal.strCategory }}
-    </div>
+<div class="form-group">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search by name"
+    style="width:300px"
+    [(ngModel)]="searchTerm"
+  />
+</div>
+<ul class="categories" *ngIf="meals; else loading">
+  <li *ngFor="let meal of meals | categoryFilter: searchTerm">
+    <div class="header"></div>
     <div class="recipe">
-      <img src="{{ meal.strMealThumb }}" (click)="onSelect(meal.idMeal)" />
+      <a [routerLink]="['/categories', meal.idMeal]"><span class="badge">{{ meal.strMeal }}</span> {{ meal.strCategory }}</a>
+      <img src="{{ meal.strMealThumb }}" (click)="(meal.idMeal)" />
 
       <div class="instructions">
         <p>{{ meal.strInstructions }}</p>
@@ -29,9 +36,10 @@
         <p>{{ meal.strMeasure14 }} {{ meal.strIngredient14 }}</p>
         <p>{{ meal.strMeasure15 }} {{ meal.strIngredient15 }}</p>
       </div>
-      
-      <a href="{{ meal.strYoutube }}">Link to Video instuctions</a>  <a href="{{ meal.strSource }}">Link to Source</a>
-      
+
+      <a href="{{ meal.strYoutube }}">Link to Video instuctions</a>
+      <a href="{{ meal.strSource }}">Link to Source</a>
     </div>
   </li>
 </ul>
+<ng-template #loading>Loading meals...</ng-template>

@@ -13,7 +13,8 @@ export class CategoriesComponent implements OnInit {
   */
   meals: meal[];
   selectedMeals: meals;
-  id: 52976;
+  id: '';
+  searchTerm: string;
 
   onSelect(meals: meals): void {
     this.selectedMeals = meals;
@@ -23,7 +24,7 @@ export class CategoriesComponent implements OnInit {
   constructor(private data: DataService) {}
 
   ngOnInit() {
-    this.data.getRecipe().subscribe((resp: meals) => {
+    this.data.getRecipes().subscribe((resp: meals) => {
       this.meals = resp.meals;
     });
   }

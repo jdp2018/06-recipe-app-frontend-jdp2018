@@ -12,10 +12,10 @@ interface categories {
 */
 
 interface meal {
-  idMeal: "52976";
+  idMeal: string;
+  strCategory: string;
   strMeal: string;
   strDrinkAlternate: null;
-  strCategorey: string;
   strArea: string;
   strInstructions: string;
   strMealThumb: string;
