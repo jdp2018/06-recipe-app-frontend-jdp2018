@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import {  DataService } from '../data.service';
+import { Component, OnInit } from "@angular/core";
+import { DataService } from "../data.service";
 
 @Component({
-  selector: 'app-vegetarian',
-  templateUrl: './vegetarian.component.html',
-  styleUrls: ['./vegetarian.component.scss']
+  selector: "app-vegetarian",
+  templateUrl: "./vegetarian.component.html",
+  styleUrls: ["./vegetarian.component.scss"]
 })
 export class VegetarianComponent implements OnInit {
-
   meals: meal[];
   selectedMeals: meals;
-  id: '';
+  id: "";
   searchTerm: string;
 
   onSelect(meals: meals): void {
@@ -21,7 +20,7 @@ export class VegetarianComponent implements OnInit {
   constructor(private data: DataService) {}
 
   ngOnInit() {
-    this.data.getRecipe().subscribe((resp: meals) => {
+    this.data.getRandom().subscribe((resp: meals) => {
       this.meals = resp.meals;
     });
   }

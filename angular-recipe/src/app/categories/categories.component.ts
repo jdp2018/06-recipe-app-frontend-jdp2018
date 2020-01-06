@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { Component, OnInit } from "@angular/core";
+import { DataService } from "../data.service";
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  selector: "app-categories",
+  templateUrl: "./categories.component.html",
+  styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
   /*
@@ -13,7 +13,7 @@ export class CategoriesComponent implements OnInit {
   */
   meals: meal[];
   selectedMeals: meals;
-  id: '';
+  id: "";
   searchTerm: string;
 
   onSelect(meals: meals): void {
@@ -24,8 +24,12 @@ export class CategoriesComponent implements OnInit {
   constructor(private data: DataService) {}
 
   ngOnInit() {
-    this.data.getRecipes().subscribe((resp: meals) => {
-      this.meals = resp.meals;
-    });
+    this.meals = [];
+    for (let i = 0; i < 10; i++) {
+      this.data.getRandom().subscribe((resp: meals) => {
+        console.log(resp);
+        this.meals.push(resp.meals[0]);
+      });
+    }
   }
 }

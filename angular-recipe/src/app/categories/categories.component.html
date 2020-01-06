@@ -11,7 +11,9 @@
   <li *ngFor="let meal of meals | categoryFilter: searchTerm">
     <div class="header"></div>
     <div class="recipe">
-      <a [routerLink]="['/categories', meal.idMeal]"><span class="badge">{{ meal.strMeal }}</span> {{ meal.strCategory }}</a>
+      <a [routerLink]="['/categories', meal.idMeal]"
+        ><span class="badge">{{ meal.strMeal }}</span> {{ meal.strCategory }}</a
+      >
       <img src="{{ meal.strMealThumb }}" (click)="(meal.idMeal)" />
 
       <div class="instructions">
