@@ -4,12 +4,14 @@ import { Observable, forkJoin } from "rxjs";
 import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class DataService {
   private apiUrl = "https://www.themealdb.com/api/json/v1/1";
   constructor(private http: HttpClient) {}
   private randomUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
+
+  private baseUrl = "http://localhost:8000/api";
 
   getRecipe(id: string): Observable<object> {
     return this.http.get(`${this.apiUrl}/lookup.php?i=${id}`);
@@ -18,5 +20,19 @@ export class DataService {
   getRandom(): Observable<object> {
     return this.http.get(this.randomUrl);
   }
-}
 
+  login(data) {
+    return this.http.post(`${this.baseUrl}/login`, data);
+  }
+
+  signUp(data) {
+    return this.http.post(`${this.baseUrl}/signup`, data);
+  }
+
+  resetPassword(data) {
+    return this.http.post(`${this.baseUrl}/resetPassword`, data);
+  }
+  changePassword(data) {
+    return this.http.post(`${this.baseUrl}/convertPassword`, data);
+  }
+}

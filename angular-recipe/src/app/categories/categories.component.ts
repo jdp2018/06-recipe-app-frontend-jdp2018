@@ -4,7 +4,7 @@ import { DataService } from "../data.service";
 @Component({
   selector: "app-categories",
   templateUrl: "./categories.component.html",
-  styleUrls: ["./categories.component.scss"]
+  styleUrls: ["./categories.component.scss"],
 })
 export class CategoriesComponent implements OnInit {
   /*
@@ -27,7 +27,6 @@ export class CategoriesComponent implements OnInit {
     this.meals = [];
     for (let i = 0; i < 10; i++) {
       this.data.getRandom().subscribe((resp: meals) => {
-        console.log(resp);
         this.meals.push(resp.meals[0]);
       });
     }
