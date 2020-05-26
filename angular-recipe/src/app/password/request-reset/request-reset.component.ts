@@ -21,13 +21,12 @@ export class RequestResetComponent implements OnInit {
 
   onSubmit() {
     this.ResetPassword.resetPassword(this.form).subscribe(
-      (data) => this.handleResponse(data),
+      (data) => this.handleResponse(),
       (error) => this.notify.error(error.error.error)
     );
   }
 
-  handleResponse(res) {
-    console.log(res);
+  handleResponse() {
     this.form.email = null;
   }
 }

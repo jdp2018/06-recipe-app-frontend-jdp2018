@@ -1,3 +1,7 @@
+* {
+  color: #8ab7e6;
+}
+
 .form-group {
   width: 100%;
   border: none;
@@ -8,7 +12,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-
 .recipe {
   border-radius: 10px;
   box-shadow: 0px 5px 30px rgb(71, 71, 71);
@@ -28,7 +31,6 @@
 .videoInstructions {
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   padding: 25px;
 }
 

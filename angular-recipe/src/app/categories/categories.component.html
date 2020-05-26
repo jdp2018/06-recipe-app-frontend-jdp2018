@@ -19,11 +19,11 @@
         </div>
         <div class="videoInstructions">
           <a [routerLink]="['/categories', meal.idMeal]"
-            ><span class="badge">{{ meal.strMeal }}</span>
-            {{ meal.strCategory }}</a
-          >
-          <a href="{{ meal.strYoutube }}">Video instuctions</a>
-          <a href="{{ meal.strSource }}">Source</a>
+            ><span class="badge">{{ meal.strMeal }} </span>
+          </a>
+          {{ meal.strCategory }}
+          {{ meal.idMeal }}
+          <a [routerLink]="['/recipe-favories']">Save this recipe!</a>
         </div>
       </div>
     </li>

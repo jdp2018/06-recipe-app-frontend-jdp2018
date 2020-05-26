@@ -18,6 +18,7 @@ import { RequestResetComponent } from "./password/request-reset/request-reset.co
 import { ResponseResetComponent } from "./password/response-reset/response-reset.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { SnotifyModule, SnotifyService, ToastDefaults } from "ng-snotify";
+import { SavedRecipesComponent } from './saved-recipes/saved-recipes.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from "ng-snotify";
     RequestResetComponent,
     ResponseResetComponent,
     ProfileComponent,
+    SavedRecipesComponent,
   ],
   imports: [
     BrowserModule,

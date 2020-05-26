@@ -12,6 +12,7 @@ import { RequestResetComponent } from "./password/request-reset/request-reset.co
 import { ResponseResetComponent } from "./password/response-reset/response-reset.component";
 import { BeforeLoginService } from "./before-login.service";
 import { AfterLoginService } from "./after-login.service";
+import { SavedRecipesComponent } from "./saved-recipes/saved-recipes.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/categories", pathMatch: "full" },
@@ -47,9 +48,10 @@ const reciperoutes: Routes = [
   { path: "categories", component: CategoriesComponent },
   { path: "home", component: HomeComponent },
   { path: "signup", component: SignUpComponent },
-  { path: "profile", component: ProfileComponent },
+  { path: "recipe-favories", component: ProfileComponent },
   { path: "response-reset", component: ResponseResetComponent },
   { path: "request-reset", component: RequestResetComponent },
+  { path: "saved-recipes", component: SavedRecipesComponent },
 ];
 
 @NgModule({

@@ -1,1 +1,33 @@
-<p>Hello from profile</p>
+<div class="recipe" *ngIf="meal; else loading">
+  <span class="badge">{{ meal.strMeal }}</span> {{ meal.strCategory }}
+  <div class="images">
+    <img src="{{ meal.strMealThumb }}" (click)="(meal.idMeal)" />
+  </div>
+
+  <div class="instructions">
+    <p>{{ meal.strInstructions }}</p>
+  </div>
+
+  <div class="ingridient">
+    Ingridients
+    <p>{{ meal.strMeasure1 }} {{ meal.strIngredient1 }}</p>
+    <p>{{ meal.strMeasure2 }}{{ meal.strIngredient2 }}</p>
+    <p>{{ meal.strMeasure3 }} {{ meal.strIngredient3 }}</p>
+    <p>{{ meal.strMeasure4 }} {{ meal.strIngredient4 }}</p>
+    <p>{{ meal.strMeasure5 }} {{ meal.strIngredient5 }}</p>
+    <p>{{ meal.strMeasure6 }} {{ meal.strIngredient6 }}</p>
+    <p>{{ meal.strMeasure7 }} {{ meal.strIngredient7 }}</p>
+    <p>{{ meal.strMeasure8 }} {{ meal.strIngredient8 }}</p>
+    <p>{{ meal.strMeasure9 }} {{ meal.strIngredient9 }}</p>
+    <p>{{ meal.strMeasure10 }} {{ meal.strIngredient10 }}</p>
+    <p>{{ meal.strMeasure11 }} {{ meal.strIngredient11 }}</p>
+    <p>{{ meal.strMeasure12 }} {{ meal.strIngredient12 }}</p>
+    <p>{{ meal.strMeasure13 }} {{ meal.strIngredient13 }}</p>
+    <p>{{ meal.strMeasure14 }} {{ meal.strIngredient14 }}</p>
+    <p>{{ meal.strMeasure15 }} {{ meal.strIngredient15 }}</p>
+  </div>
+
+  <a href="{{ meal.strYoutube }}">Link to Video instuctions</a>
+  <a href="{{ meal.strSource }}">Link to Source</a>
+</div>
+<ng-template #loading>Loading meal...</ng-template>

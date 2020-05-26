@@ -7,10 +7,6 @@ import { DataService } from "../data.service";
   styleUrls: ["./categories.component.scss"],
 })
 export class CategoriesComponent implements OnInit {
-  /*
-  categories: category[];
-  selectedCategory: category;
-  */
   meals: meal[];
   selectedMeals: meals;
   id: "";
