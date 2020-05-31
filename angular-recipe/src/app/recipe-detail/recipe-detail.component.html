@@ -1,6 +1,6 @@
 <div class="recipe" *ngIf="meal; else loading">
   <span class="badge">{{ meal.strMeal }}</span> {{ meal.strCategory }}
-  <div class="images ">
+  <div class="images">
     <img src="{{ meal.strMealThumb }}" (click)="(meal.idMeal)" />
   </div>
 
@@ -23,8 +23,6 @@
     <p>{{ meal.strMeasure11 }} {{ meal.strIngredient11 }}</p>
     <p>{{ meal.strMeasure12 }} {{ meal.strIngredient12 }}</p>
     <p>{{ meal.strMeasure13 }} {{ meal.strIngredient13 }}</p>
-    <p>{{ meal.strMeasure14 }} {{ meal.strIngredient14 }}</p>
-    <p>{{ meal.strMeasure15 }} {{ meal.strIngredient15 }}</p>
   </div>
 
   <a href="{{ meal.strYoutube }}">Link to Video instuctions</a>

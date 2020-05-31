@@ -1,3 +1,35 @@
-<p>
-  saved-recipes works!
-</p>
+<div class="form-group">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search by category"
+    [(ngModel)]="searchTerm"
+  />
+</div>
+<div class="container">
+  <ul class="categories" *ngIf="meals; else loading">
+    <li *ngFor="let meal of meals | categoryFilter: searchTerm">
+      <div class="recipe">
+        <div class="img">
+          <img
+            src="{{ meal.strMealThumb }}"
+            (click)="(meal.idMeal)"
+            style="width: 90%;"
+          />
+        </div>
+        <div class="videoInstructions">
+          <a [routerLink]="['/categories', meal.idMeal]"
+            ><span class="badge">{{ meal.strMeal }} </span>
+          </a>
+          {{ meal.strCategory }}
+          {{ meal.idMeal }}
+          <button (click)="onDeleteRecipes(meal.idMeal)">
+            Save this recipe!
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading>Loading meals...</ng-template>

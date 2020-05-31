@@ -15,6 +15,9 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('resetPassword', 'ResetPasswordController@sendEmail');
     Route::post('convertPassword', 'ConvertPasswordController@resetProcess');
-
+    Route::post('recipe', 'SaveRecipeController@addRecepie');
+    Route::post('recipeDelete', 'SaveRecipeController@deleteRecepie');
+    Route::post('recipes', 'SaveRecipeController@getRecepies');
 
 });
+// Route::resource('recipes', 'SaveRecipeController')->middleware('auth:api');

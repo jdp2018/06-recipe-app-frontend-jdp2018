@@ -51,7 +51,11 @@ const reciperoutes: Routes = [
   { path: "recipe-favories", component: ProfileComponent },
   { path: "response-reset", component: ResponseResetComponent },
   { path: "request-reset", component: RequestResetComponent },
-  { path: "saved-recipes", component: SavedRecipesComponent },
+  {
+    path: "saved-recipes",
+    component: SavedRecipesComponent,
+    canActivate: [AfterLoginService],
+  },
 ];
 
 @NgModule({

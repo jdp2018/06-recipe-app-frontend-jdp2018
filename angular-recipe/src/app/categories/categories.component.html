@@ -23,7 +23,9 @@
           </a>
           {{ meal.strCategory }}
           {{ meal.idMeal }}
-          <a [routerLink]="['/recipe-favories']">Save this recipe!</a>
+          <button (click)="onSaveRecipes(meal.idMeal)">
+            Save this recipe!
+          </button>
         </div>
       </div>
     </li>

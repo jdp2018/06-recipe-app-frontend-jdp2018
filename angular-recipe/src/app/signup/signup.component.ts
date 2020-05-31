@@ -15,6 +15,7 @@ export class SignUpComponent implements OnInit {
     name: null,
     password: null,
     password_confirmation: null,
+    idMeal: null,
   };
   public error = [];
   constructor(

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, forkJoin } from "rxjs";
 import { map } from "rxjs/operators";
 
@@ -34,5 +34,14 @@ export class DataService {
   }
   changePassword(data) {
     return this.http.post(`${this.baseUrl}/convertPassword`, data);
+  }
+  saveRecipe(data) {
+    return this.http.post(`${this.baseUrl}/recipe`, data);
+  }
+  showRecipes(data) {
+    return this.http.post(`${this.baseUrl}/recipes`, data);
+  }
+  recipeDelete(data) {
+    return this.http.post(`${this.baseUrl}/recipeDelete`, data);
   }
 }

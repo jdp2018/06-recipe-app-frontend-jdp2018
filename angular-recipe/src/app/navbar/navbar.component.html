@@ -3,6 +3,6 @@
   <div class="topnav-right">
     <a routerLink="login" *ngIf="!loggedIn">Login</a>
     <a href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
-    <a routerLink="recipe-favories" *ngIf="loggedIn">Saved recipes</a>
+    <a routerLink="saved-recipes" *ngIf="loggedIn">Saved recipes</a>
   </div>
 </div>

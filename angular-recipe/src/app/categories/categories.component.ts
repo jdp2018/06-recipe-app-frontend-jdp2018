@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
+import { TokenService } from "../token.service";
 
 @Component({
   selector: "app-categories",
@@ -11,13 +12,29 @@ export class CategoriesComponent implements OnInit {
   selectedMeals: meals;
   id: "";
   searchTerm: string;
+  public input = {
+    email: null,
+    password: null,
+    idMeal: null,
+  };
 
   onSelect(meals: meals): void {
     this.selectedMeals = meals;
-    console.log(this.selectedMeals);
+  }
+  onSaveRecipes(idMeal: number) {
+    this.savedRecipes
+      .saveRecipe({ token: this.token.get(), idMeal })
+      .subscribe((data) => this.handleResponse());
+  }
+  handleResponse() {
+    this.input.idMeal = null;
   }
 
-  constructor(private data: DataService) {}
+  constructor(
+    private data: DataService,
+    private savedRecipes: DataService,
+    private token: TokenService
+  ) {}
 
   ngOnInit() {
     this.meals = [];
