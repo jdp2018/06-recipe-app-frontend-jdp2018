@@ -17,7 +17,7 @@ export class SignUpComponent implements OnInit {
     password_confirmation: null,
     idMeal: null,
   };
-  public error = [];
+  public error: any = {};
   constructor(
     private signUpApi: DataService,
     private Token: TokenService,
@@ -37,7 +37,7 @@ export class SignUpComponent implements OnInit {
   }
   handleResponse(data) {
     this.Token.handle(data.access_token);
-    this.router.navigateByUrl("/profile");
+    this.router.navigateByUrl("/saved-recipes");
   }
 
   ngOnInit() {}

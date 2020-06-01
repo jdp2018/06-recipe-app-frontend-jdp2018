@@ -1,13 +1,9 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { RecipeListComponent } from "./recipe-list/recipe-list.component";
 import { CategoriesComponent } from "./categories/categories.component";
-import { VegetarianComponent } from "./vegetarian/vegetarian.component";
 import { RecipeDetailComponent } from "./recipe-detail/recipe-detail.component";
 import { LoginComponent } from "./login/login.component";
 import { SignUpComponent } from "./signup/signup.component";
-import { ProfileComponent } from "./profile/profile.component";
 import { RequestResetComponent } from "./password/request-reset/request-reset.component";
 import { ResponseResetComponent } from "./password/response-reset/response-reset.component";
 import { BeforeLoginService } from "./before-login.service";
@@ -27,11 +23,6 @@ const routes: Routes = [
     canActivate: [BeforeLoginService],
   },
   {
-    path: "profile",
-    component: ProfileComponent,
-    canActivate: [AfterLoginService],
-  },
-  {
     path: "request-password-reset",
     component: RequestResetComponent,
     canActivate: [BeforeLoginService],
@@ -46,9 +37,7 @@ const routes: Routes = [
 const reciperoutes: Routes = [
   { path: "categories/:id", component: RecipeDetailComponent },
   { path: "categories", component: CategoriesComponent },
-  { path: "home", component: HomeComponent },
   { path: "signup", component: SignUpComponent },
-  { path: "recipe-favories", component: ProfileComponent },
   { path: "response-reset", component: ResponseResetComponent },
   { path: "request-reset", component: RequestResetComponent },
   {
@@ -64,13 +53,9 @@ const reciperoutes: Routes = [
 })
 export class AppRoutingModule {}
 export const routingComponents = [
-  HomeComponent,
-  RecipeListComponent,
   CategoriesComponent,
-  VegetarianComponent,
   LoginComponent,
   SignUpComponent,
-  ProfileComponent,
   RequestResetComponent,
   ResponseResetComponent,
 ];

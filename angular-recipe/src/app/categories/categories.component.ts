@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
 import { TokenService } from "../token.service";
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: "app-categories",
@@ -17,6 +18,7 @@ export class CategoriesComponent implements OnInit {
     password: null,
     idMeal: null,
   };
+  public loggedIn: boolean;
 
   onSelect(meals: meals): void {
     this.selectedMeals = meals;
@@ -33,10 +35,12 @@ export class CategoriesComponent implements OnInit {
   constructor(
     private data: DataService,
     private savedRecipes: DataService,
-    private token: TokenService
+    private token: TokenService,
+    private Auth: AuthService
   ) {}
 
   ngOnInit() {
+    this.Auth.authStatus.subscribe((value) => (this.loggedIn = value));
     this.meals = [];
     for (let i = 0; i < 10; i++) {
       this.data.getRandom().subscribe((resp: meals) => {

@@ -1,16 +1,3 @@
-/*
-interface category {
-    idCategory: string;
-    strCategory: string;
-    strCategoryThumb?: string;
-    strCategoryDescription?: string;
-}
-
-interface categories {
-    categories: category[];
-}
-*/
-
 interface meal {
   idMeal: string;
   strCategory: string;

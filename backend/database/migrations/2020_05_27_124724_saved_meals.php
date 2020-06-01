@@ -17,7 +17,6 @@ class SavedMeals extends Migration
             $table->bigIncrements('id');
             $table->Integer('user_id');
             $table->string('idMeal', 32);
-            $table->json('json_data');
             $table->unique(['user_id', 'idMeal']);
             $table->timestamps();
         });

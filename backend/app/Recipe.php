@@ -9,7 +9,7 @@ class Recipe extends Model
 {
 
     protected $fillable = [
-        'user_id', 'idMeal', 'json_data'
+        'user_id', 'idMeal'
     ];
 
     public function user()

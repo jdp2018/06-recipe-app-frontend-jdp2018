@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 
-
-
-
 class ResetPasswordController extends Controller
 {
     public function sendEmail(Request $request)

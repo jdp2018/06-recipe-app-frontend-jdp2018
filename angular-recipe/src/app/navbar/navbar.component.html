@@ -1,8 +1,10 @@
-<div class="topnav">
-  <a class="active" href="/categories">Home</a>
-  <div class="topnav-right">
-    <a routerLink="login" *ngIf="!loggedIn">Login</a>
-    <a href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
-    <a routerLink="saved-recipes" *ngIf="loggedIn">Saved recipes</a>
+<mat-toolbar color="primary">
+  <div class="header">
+    <a class="active" href="/categories">Home</a>
+    <div class="header-right">
+      <a routerLink="login" *ngIf="!loggedIn">Login</a>
+      <a href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
+      <a routerLink="saved-recipes" *ngIf="loggedIn">Saved recipes</a>
+    </div>
   </div>
-</div>
+</mat-toolbar>

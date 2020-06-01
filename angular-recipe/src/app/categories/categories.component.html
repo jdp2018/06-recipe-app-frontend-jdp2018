@@ -14,7 +14,7 @@
           <img
             src="{{ meal.strMealThumb }}"
             (click)="(meal.idMeal)"
-            style="width: 90%;"
+            style="width: 90%; margin: 12px 0px 0px -4px;"
           />
         </div>
         <div class="videoInstructions">
@@ -22,10 +22,15 @@
             ><span class="badge">{{ meal.strMeal }} </span>
           </a>
           {{ meal.strCategory }}
-          {{ meal.idMeal }}
-          <button (click)="onSaveRecipes(meal.idMeal)">
+          <button
+            *ngIf="loggedIn"
+            mat-raised-button
+            color="primary"
+            (click)="onSaveRecipes(meal.idMeal)"
+          >
             Save this recipe!
           </button>
+          <a href="/login" *ngIf="!loggedIn">Login to save Recipes!</a>
         </div>
       </div>
     </li>
